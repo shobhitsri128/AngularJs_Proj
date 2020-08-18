@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchCheck" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="angular.min.js" charset="utf-8"></script>
+        <script src="app.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div ng-controller="LunchCheckController">
+            <center>
+                <h1>MODULE 1  ASSIGNMENT</h1> 
+            <input type="text" ng-model="lunch_items">
+            &nbsp;<button type="button" ng-click="countItems()">Check If Too Much</button>
+            <br>
+            <br>
+            {{message}}
+            </center>
+        </div>
+    </body>
+</html>
