@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListCheckOff" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>ShoppingListCheckOff</title>
+        <script src="angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <br>
+        <br>
+        <br>
+        <div class="row container">
+            <div class="col-md-6" ng-controller="ToBuyController as buy">
+                <table class="table table-striped">
+                    <thead>
+                        <h2 class="page-header">To Buy<h2>
+                   </thead>
+                   <tbody>
+                       <tr ng-repeat="item in buy.buy_list">
+                           <td>{{$index+1}}</td>
+                           <td>Buy</td>
+                           <td>{{item.quantity}}</td>
+                           <td>{{item.name}}</td>
+                           <td><button type="button" class="btn btn-success" ng-click="buy.buyItem($index)" name="button">Bought</button></td>
+                       </tr>
+                   </tbody>
+                </table>
+                <h3 ng-if="(buy.buy_list.length==0)"><span style="color:red">Everything is bought!</span></h3>
+            </div>
+            <div class="col-md-6" ng-controller="AlreadyBoughtController as bought">
+                <table class="table table-striped">
+                    <thead>
+                        <h2 class="page-header">Already Bought<h2>
+                   </thead>
+                   <tbody>
+                       <tr ng-repeat="item in bought.bought_list">
+                           <td>{{$index+1}}</td>
+                           <td>Bought</td>
+                           <td>{{item.quantity}}</td>
+                           <td>{{item.name}}</td>
+                       </tr>
+                   </tbody>
+                </table>
+                <h3 ng-if="(bought.bought_list==0)"><span style="color:red">Nothing bought yet!</span></h3>
+            </div>
+        </div>
+    </body>
+</html>
