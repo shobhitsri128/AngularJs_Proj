@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NarrowItDownApp" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>ShoppingListCheckOff</title>
+        <script src="angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller="NarrowItDownAppController as vm" class="container">
+        <br>
+        <br>
+        <br>
+        <h1 class="jumbotron">MENU LIST</h1>
+        <div class="row">
+            <br>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="vm.search"></input>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-success" name="button" ng-click="vm.getList()">Narrow It Down For Me!</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <table ng-if="vm.found.length!=0" class="table striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Short Name</th>
+                        <th>Description</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in vm.found">
+                        <td>{{item.name}}</td>
+                        <td>{{item.short_name}}</td>
+                        <td>{{item.description}}</td>
+                        <td><button class="btn btn-danger" ng-click="vm.remove($index)">Don't want this one!</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h1 style="color:red" ng-show="vm.showError">Nothing found!</h1>
+    </body>
+</html>
