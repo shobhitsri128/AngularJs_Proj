@@ -1,0 +1,7 @@
+<a ui-sref="home">Home</a> &lt; <span>Category</span>
+<br>
+<ol>
+    <li ng-repeat="x in category.categoryListDescription">
+        <button ui-sref="items({short_name:x.short_name})" class="btn btn-link">{{x.name}}</button>
+    </li>
+</ol>
