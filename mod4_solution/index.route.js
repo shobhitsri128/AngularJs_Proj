@@ -22,6 +22,7 @@
             controller:'categoryController as category'
         })
         .state('items',{
+            url:'/items',
             templateUrl:'src/template/items.html',
             controller:'itemController as itemCtrl',
             params:{
