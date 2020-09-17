@@ -1,0 +1,54 @@
+<h1 ng-if="vm.params==null" class="text-center">Not Signed up yet. <a ui-sref="signup">Signup</a> Now!</h1>
+<div class="container" ng-if="vm.params!=null">
+    <h1 class="text-center">My Info</h1>
+    <br>
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+                <b>First Name :</b> {{vm.params.fname}}
+        </div>
+        <div class="col-md-3 col-sm-6">
+                <b>Last Name :</b> {{vm.params.lname}}
+        </div>
+        <div class="col-md-3 col-sm-6">
+                <b>Email :</b> {{vm.params.email}}
+        </div>
+        <div class="col-md-3 col-sm-6">
+                <b>Phno. :</b> {{vm.params.phno}}
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="col-md-6">
+        <img ng-src="images/menu/{{vm.params.menu_num.category_short_name}}/{{vm.params.menu_num.category_short_name}}.jpg" alt="">
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{vm.params.menu_num.name}}</td>
+                </tr>
+                <tr>
+                    <td>Short name:</td>
+                    <td>{{vm.params.menu_num.short_name}}</td>
+                </tr>
+                <tr>
+                    <td>Price small:</td>
+                    <td>{{vm.params.menu_num.price_small}}</td>
+                </tr>
+                <tr>
+                    <td>Price large:</td>
+                    <td>{{vm.params.menu_num.price_large}}</td>
+                </tr>
+                <tr>
+                    <td>Large portion name:</td>
+                    <td>{{vm.params.menu_num.large_portion_name}}</td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td>{{vm.params.menu_num.description}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

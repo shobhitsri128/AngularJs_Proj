@@ -1,0 +1,63 @@
+<h1 class="text-center">Signup</h1>
+<br>
+<div class="container">
+    <form name="myForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-4">
+                    First name :
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" placeholder="First Name" name="fname" ng-model="vm.fname" required>
+                </div>
+                <span class="text-red" ng-if="myForm.fname.$invalid && myForm.fname.$touched">Required first name</span>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-4">
+                    Last name :
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" placeholder="Last Name" name="lname" ng-model="vm.lname" required>
+                </div>
+                <span class="text-red" ng-if="myForm.lname.$invalid && myForm.lname.$touched">Required last name</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-4">
+                    Email :
+                </div>
+                <div class="col-md-8">
+                    <input type="email" class="form-control" placeholder="Email" name="email" ng-model="vm.email" required>
+                </div>
+                <span class="text-red" ng-if="myForm.email.$invalid && myForm.email.$touched">Invalid email</span>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-4">
+                    Phno. :
+                </div>
+                <div class="col-md-8">
+                    <input type="number" class="form-control" placeholder="Phno." name="phno" ng-model="vm.phno" required>
+                </div>
+                <span class="text-red" ng-if="myForm.phno.$invalid && myForm.phno.$touched">Required phone number</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-4">
+                    Menu Number :
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" placeholder="Menu number" name="menu_num" ng-model="vm.menu_num">
+                </div>
+                <span ng-if="vm.showError" class="text-red">No such menu number exist</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <center><button type="button" class="btn btn-success" ng-disabled="myForm.$invalid" ng-click="vm.submit()" name="button">Submit</button>
+        </div>
+    </form>
+</div>
